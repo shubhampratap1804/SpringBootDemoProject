@@ -23,7 +23,6 @@ public class ModelClass {
 
 	@Override
 	public String toString() {
-		return "Person{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + '}';
+		return "ModelClass{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + '}';
 	}
-
 }

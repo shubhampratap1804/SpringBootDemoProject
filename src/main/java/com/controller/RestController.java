@@ -2,6 +2,7 @@ package com.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,5 +41,12 @@ public class RestController {
     @PostMapping("/post")
     public String postPersonFullName(@RequestBody ModelClass person) {
         return "Hello, Welcome " + person.getFirstName() + " " + person.getLastName();
+    }
+    
+    //Demonstrating PutMapping with @PathVariable and @RequestParam
+    //localhost:8080/put/Shubham/?lastName=Singh
+    @PutMapping("/put/{firstname}")
+    public String putMappingPersonInfo(@PathVariable String firstname, @RequestParam(value = "lastname") String lastname) {
+        return "hello, Welcome " + firstname + " " + lastname;
     }
 }
