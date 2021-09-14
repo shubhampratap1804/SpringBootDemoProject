@@ -2,6 +2,7 @@ package com.controller;
 import org.springframework.web.bind.annotation.GetMapping;import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @org.springframework.web.bind.annotation.RestController
@@ -17,5 +18,10 @@ public class RestController {
 	@GetMapping("/hello")
 	public String helloMessage() {
 		return "Hello From Bridgelabz";
+	}
+	
+	@GetMapping("/name")
+	public String nameAsQueryParameter(@RequestParam String name) {
+		return "My name is: "+name;
 	}
 }
